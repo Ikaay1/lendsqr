@@ -32,11 +32,12 @@ The whole process of building this React App involves the following stages:-
 
 #### 1. The Design/Planning stage
 
-Ideally, I needed to divided the components in such a way that one component only has a single functionality. I also needed to account for component re-usability Eg. components for displaying error messages or app loading state.
-Since the app is thought to be a basic one, I had two(2) top level components in mind for the UI design:
+Ideally, I needed to divided the components in such a way that one component only has a single functionality. I also needed to account for component re-usability Eg. components for displaying Navbar or app loading state.
+Since the app is thought to be a basic one, I had two(3) top level components in mind for the UI design:
 
-- Sidebar component: a view showing the navigation links.
-- Main component: a view showing the implemented pie charts and line graph, the data gotten from the API.
+- Login component: a view showing the login page.
+- Users component: a view displaying the users data gotten from the API.
+- User component: a view displaying a specific user data, gotten from the API.
 
 #### 2. Building a static version of the app
 
@@ -45,7 +46,7 @@ For me, main objective in this stage was to build the structure of the app and s
 
 #### 3. Setting up API
 
-In this stage, I setup my api logic to retrieve list of users, and individual user from the specified hosted backend.
+In this stage, I setup my api logic to retrieve list of users, and individual user from the specified hosted backend, and then displayed on JSX using function reusability.
 
 #### 4. Testing
 
