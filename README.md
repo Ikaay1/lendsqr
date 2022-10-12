@@ -77,7 +77,8 @@ Testing basically helps you spot bugs on time. The more tests I write, the more 
 5. Open running application
 
    ```
-   http://localhost:3000/ or the specified url from the terminal
+   http://localhost:3000/ or the specified url from the terminal for the login page
+   http://localhost:3000/users for the users page
    ```
 
 ## Testing
