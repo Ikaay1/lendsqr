@@ -3,7 +3,7 @@
 Dashboard of a mini web application.
 
 Built with Javascript(ES6) and ReactJs.
-For demo, visit https://lendsqr-ikaay.netlify.app
+For demo, visit https://mgbemele-ikechukwu-lendsqr-fe-test.netlify.app
 
 ## Features
 
