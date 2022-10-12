@@ -1,0 +1,282 @@
+.users {
+    padding: 150px 60px 60px 320px;
+}
+.users h2 {
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--dark-blue);
+}
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 30px 0;
+}
+.stat-box {
+    background: white;
+    width: 240px;
+    padding: 20px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+}
+.stat-box h3 {
+    margin: 10px 0;
+    color: var(--text-color-1);
+    font-size: 14px;
+}
+.users table {
+    width: 100%;
+    background: white;
+    text-align: left;
+    font-size: 12px;
+    padding: 0 20px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    position: relative;
+}
+.users table th,
+.users table td {
+    padding: 20px 0;
+}
+.users table td {
+    font-size: 14px;
+    font-weight: 400;
+}
+s .users table th {
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.users table th span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.filter-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+.users .status p {
+    text-transform: capitalize;
+    border-radius: 100px;
+    position: relative;
+    width: fit-content;
+    padding: 0 3px;
+}
+.users table .status p::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 10%;
+    width: 110%;
+    height: 30px;
+    border-radius: 100px;
+}
+
+.table-inactive {
+    color: #545f7d;
+}
+.table-inactive p::before {
+    background: rgba(84, 95, 125, 0.1);
+}
+.table-pending {
+    color: #e9b200;
+}
+.table-pending p::before {
+    background: rgba(233, 178, 0, 0.1);
+}
+.table-blacklisted {
+    color: #e4033b;
+}
+.table-blacklisted p::before {
+    background: rgba(228, 3, 59, 0.1);
+}
+.table-active {
+    color: #39cd62;
+}
+.table-active p::before {
+    background: rgba(57, 205, 98, 0.1);
+}
+
+.users .bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.users .bottom div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.users .bottom div:nth-child(2) {
+    gap: 15px;
+}
+.users .bottom button {
+    border: none;
+    background: rgba(33, 63, 125, 0.1);
+    color: var(--dark-blue);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px;
+    border-radius: 4px;
+}
+ul.more {
+    position: absolute;
+    list-style: none;
+    left: -100px;
+    top: 50px;
+    z-index: 1;
+    background: white;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    width: 150px;
+    height: 100px;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+ul.more.active {
+    display: flex;
+}
+
+ul.more li {
+    color: #545f7d;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.filter-form {
+    position: absolute;
+    background: white;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 20px;
+    border-radius: 4px;
+}
+.filter-form input {
+    outline: none;
+    border: 1px solid #213f7d;
+    padding: 10px 0;
+    border-radius: 8px;
+    margin-top: 5px;
+    text-indent: 10px;
+}
+.filter-form label,
+.status-filter,
+.org-filter {
+    margin-top: 20px;
+}
+.filter-form .drop {
+    width: 100%;
+    padding: 15px 0;
+    border: 1px solid #213f7d;
+    border-radius: 8px;
+    margin-top: 5px;
+    position: relative;
+}
+.filter-form .drop::before {
+    content: 'Select';
+    color: #545f7d;
+    opacity: 0.7;
+    position: absolute;
+    left: 10px;
+    font-weight: 400;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.filter-form .drop::after {
+    content: url('../../images/drop-down.png');
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1000px) {
+    .users {
+        padding: 30px;
+        padding-top: 100px;
+    }
+    .users table {
+        padding-top: 30px;
+    }
+    .users table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+    thead tr {
+        position: absolute;
+        top: -999px;
+        left: -999px;
+    }
+    tr {
+        border-bottom: 1px solid #ccc;
+        margin-top: 30px;
+        padding-bottom: 0;
+    }
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    td::before {
+        position: absolute;
+        top: 0px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 600;
+    }
+    td:nth-of-type(1)::before {
+        content: 'ORGANIZATION';
+    }
+    td:nth-of-type(2)::before {
+        content: 'USERNAME';
+    }
+    td:nth-of-type(3)::before {
+        content: 'EMAIL';
+    }
+    td:nth-of-type(4)::before {
+        content: 'PHONE NUMBER';
+    }
+    td:nth-of-type(5)::before {
+        content: 'DATE JOINED';
+    }
+    .stat-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .users .status p {
+        left: 8px;
+    }
+    .users .bottom {
+        justify-content: center;
+    }
+    .dots {
+        display: none;
+    }
+}

@@ -7,9 +7,9 @@ import { FaCaretDown } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { GrFormClose } from 'react-icons/gr';
 
-import logo from '../images/logo.png';
-import profilePhoto from '../images/profile-photo.png';
-import MenuContext from '../MenuContext';
+import logo from '../../images/logo.png';
+import profilePhoto from '../../images/profile-photo.png';
+import MenuContext from '../../MenuContext';
 
 const TopNav = () => {
     const {handleClick, menu} = useContext(MenuContext);

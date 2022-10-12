@@ -2,15 +2,26 @@ import './SideNav.scss';
 
 import { useContext } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-import MenuContext from '../MenuContext';
+import MenuContext from '../../MenuContext';
 
 const SideNav = () => {
     const {menu} = useContext(MenuContext);
 
-    const customers = [
-        {title: 'Users', icon: 'users.png'},
+    const customers: (
+        | {
+              title: string;
+              icon: string;
+              active: boolean;
+          }
+        | {
+              title: string;
+              icon: string;
+              active?: undefined;
+          }
+    )[] = [
+        {title: 'Users', icon: 'users.png', active: true},
         {title: 'Guarantors', icon: 'guarantors.png'},
         {title: 'Loans', icon: 'loans.png'},
         {title: 'Decisions Models', icon: 'decision-models.png'},
@@ -20,7 +31,10 @@ const SideNav = () => {
         {title: 'Karma', icon: 'karma.png'},
     ];
 
-    const businesses = [
+    const businesses: {
+        title: string;
+        icon: string;
+    }[] = [
         {title: 'Organization', icon: 'organization.png'},
         {title: 'Loan Products', icon: 'loan-request.png'},
         {title: 'Saving Products', icon: 'saving-products.png'},
@@ -32,7 +46,10 @@ const SideNav = () => {
         {title: 'Reports', icon: 'reports.png'},
     ];
 
-    const settings = [
+    const settings: {
+        title: string;
+        icon: string;
+    }[] = [
         {title: 'Preferences', icon: 'preferences.png'},
         {
             title: 'Fees and Pricing',
@@ -44,32 +61,44 @@ const SideNav = () => {
     return (
         <div className={`side-nav ${menu && 'active'}`}>
             <p className='switch-org nav-item'>
-                <img src={require('../images/icons/organization.png')} alt='' />
+                <img
+                    src={require('../../images/icons/organization.png')}
+                    alt=''
+                />
                 Switch Organization
                 <FiChevronDown />
             </p>
 
-            <Link
-                to='/'
-                className='dashboard-btn nav-item'
-                style={{marginTop: '40px'}}
-            >
-                <img src={require('../images/icons/dashboard.png')} alt='' />
+            <div className='dashboard-btn nav-item' style={{marginTop: '40px'}}>
+                <img src={require('../../images/icons/dashboard.png')} alt='' />
                 Dashboard
-            </Link>
+            </div>
 
             <ul>
                 <h4>CUSTOMERS</h4>
                 {customers.map((item, index) => {
                     return (
                         <li key={index}>
-                            <NavLink className='nav-item' to={`/${item.title}`}>
-                                <img
-                                    src={require(`../images/icons/${item.icon}`)}
-                                    alt=''
-                                />
-                                {item.title}
-                            </NavLink>
+                            {item.active ? (
+                                <NavLink
+                                    className='nav-item'
+                                    to={`/${item.title.toLowerCase()}`}
+                                >
+                                    <img
+                                        src={require(`../../images/icons/${item.icon}`)}
+                                        alt=''
+                                    />
+                                    {item.title}
+                                </NavLink>
+                            ) : (
+                                <div className='nav-item'>
+                                    <img
+                                        src={require(`../../images/icons/${item.icon}`)}
+                                        alt=''
+                                    />
+                                    {item.title}
+                                </div>
+                            )}
                         </li>
                     );
                 })}
@@ -82,7 +111,7 @@ const SideNav = () => {
                         <li key={index}>
                             <NavLink className='nav-item' to={`/${item.title}`}>
                                 <img
-                                    src={require(`../images/icons/${item.icon}`)}
+                                    src={require(`../../images/icons/${item.icon}`)}
                                     alt=''
                                 />
                                 {item.title}
@@ -99,7 +128,7 @@ const SideNav = () => {
                         <li key={index}>
                             <NavLink className='nav-item' to={`/${item.title}`}>
                                 <img
-                                    src={require(`../images/icons/${item.icon}`)}
+                                    src={require(`../../images/icons/${item.icon}`)}
                                     alt=''
                                 />
                                 {item.title}

@@ -5,17 +5,16 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
-
     return (
         <div className='login'>
             <div className='hero'>
                 <img
-                    src={require('../images/logo.png')}
+                    src={require('../../images/logo.png')}
                     alt='logo'
                     className='logo'
                 />
                 <img
-                    src={require('../images/pablo-sign-in 1.png')}
+                    src={require('../../images/pablo-sign-in 1.png')}
                     alt='hero'
                 />
             </div>
@@ -41,9 +40,7 @@ const Login = () => {
                     <div className='show-password'>SHOW</div>
                 </div>
                 <h3>FORGOT PASSWORD?</h3>
-                <button type='button' onClick={() => navigate('/users')}>
-                    LOG IN
-                </button>
+                <button onClick={() => navigate('/users')}>LOG IN</button>
             </form>
         </div>
     );

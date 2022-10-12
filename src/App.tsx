@@ -2,10 +2,12 @@ import './style.scss';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import UserContainer from './containerComponents/UserContainer';
+import UsersContainer from './containerComponents/UsersContainer';
 import { MenuProvider } from './MenuContext';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import UserInfo from './pages/UserInfo';
+import Login from './pages/Login/Login';
+import UserInfo from './pages/UserInfo/UserInfo';
+import Users from './pages/Users/Users';
 
 function App() {
     return (
@@ -13,8 +15,14 @@ function App() {
             <Router>
                 <Routes>
                     <Route path='/' element={<Login />} />
-                    <Route path='/users' element={<Home />} />
-                    <Route path='/user' element={<UserInfo />} />
+                    <Route
+                        path='/users'
+                        element={<UsersContainer>{Users}</UsersContainer>}
+                    />
+                    <Route
+                        path='/user/:id'
+                        element={<UserContainer>{UserInfo}</UserContainer>}
+                    />
                 </Routes>
             </Router>
         </MenuProvider>
