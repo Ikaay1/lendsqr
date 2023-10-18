@@ -88,4 +88,4 @@ Testing basically helps you spot bugs on time. The more tests I write, the more 
 
 ## Author
 
-- **Mgbemele Ikechukwu** - Software Developer and Soccer freak.
+- **Mgbemele Ikechukwu** - Software Developer and Soccer lover.
